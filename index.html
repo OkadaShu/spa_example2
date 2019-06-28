@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example of Single Page Application</title>
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="spa.css">
     <script src="spa.js"></script>
 </head>
@@ -17,6 +18,14 @@
             <button id="b1" name="1">チョキ</button>
             <button id="b2" name="2">パー</button>
         </div>
+        <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service_worker.js')
+    .then(function() {
+      console.log('Service worker registered!');
+    });
+}
+    </script>
     </div>
 </body>
 </html>
